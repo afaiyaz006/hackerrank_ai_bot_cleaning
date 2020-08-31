@@ -5,22 +5,22 @@ void next_move(int p1,int p2,vector<string> grid){
 
      ///check dirt
      if(grid[p1][p2]=='d') cout << "CLEAN\n";
-     ///check right
+     ///check down
      else if((p1+1<grid.size()) && (grid[p1+1][p2]) && (grid[p1+1][p2])=='d'){
             cout << "DOWN\n";
 
      }
-     ///check left
+     ///check up
      else if((p1>0) && (grid[p1-1][p2]) && (grid[p1-1][p2])=='d'){
             cout << "UP\n";
 
      }
-     ///check up
+     ///check right
      else if((p2+1<grid.size()) && (grid[p1][p2+1]) && (grid[p1][p2+1])=='d'){
             cout << "RIGHT\n";
 
      }
-     ///check down
+     ///check left
      else if((p2>0) &&(grid[p1][p2-1]) && (grid[p1][p2-1])=='d'){
             cout << "LEFT\n";
      }
@@ -43,7 +43,7 @@ void next_move(int p1,int p2,vector<string> grid){
         int g=0,h=0;
         bool k=false;
         int dis;
-        ///getting lowest manhattan distance
+        ///getting  minimum manhattan distance from the robot
         for(int i=0;i<grid.size();i++){
             for(int j=0;j<grid[i].size();j++){
                 if(grid[i][j]=='d' && !k){
